@@ -1,0 +1,64 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'E:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'E:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save-dev',
+1 verbose cli   'redux-devtools' ]
+2 info using npm@2.15.5
+3 info using node@v4.4.5
+4 verbose install initial load of F:\sundegui\github\testspa\package.json
+5 verbose installManyTop reading scoped package data from F:\sundegui\github\testspa\node_modules\react\package.json
+6 verbose installManyTop reading scoped package data from F:\sundegui\github\testspa\node_modules\react-redux\package.json
+7 verbose installManyTop reading scoped package data from F:\sundegui\github\testspa\node_modules\redux\package.json
+8 verbose readDependencies loading dependencies from F:\sundegui\github\testspa\package.json
+9 silly cache add args [ 'redux-devtools', null ]
+10 verbose cache add spec redux-devtools
+11 silly cache add parsed spec Result {
+11 silly cache add   raw: 'redux-devtools',
+11 silly cache add   scope: null,
+11 silly cache add   name: 'redux-devtools',
+11 silly cache add   rawSpec: '',
+11 silly cache add   spec: 'latest',
+11 silly cache add   type: 'tag' }
+12 silly addNamed redux-devtools@latest
+13 verbose addNamed "latest" is being treated as a dist-tag for redux-devtools
+14 info addNameTag [ 'redux-devtools', 'latest' ]
+15 silly mapToRegistry name redux-devtools
+16 silly mapToRegistry using default registry
+17 silly mapToRegistry registry https://registry.npmjs.org/
+18 silly mapToRegistry data Result {
+18 silly mapToRegistry   raw: 'redux-devtools',
+18 silly mapToRegistry   scope: null,
+18 silly mapToRegistry   name: 'redux-devtools',
+18 silly mapToRegistry   rawSpec: '',
+18 silly mapToRegistry   spec: 'latest',
+18 silly mapToRegistry   type: 'tag' }
+19 silly mapToRegistry uri https://registry.npmjs.org/redux-devtools
+20 verbose addNameTag registry:https://registry.npmjs.org/redux-devtools not in flight; fetching
+21 verbose request uri https://registry.npmjs.org/redux-devtools
+22 verbose request no auth needed
+23 info attempt registry request try #1 at 23:42:23
+24 verbose request id d921c1dcae345c40
+25 http request GET https://registry.npmjs.org/redux-devtools
+26 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+27 info attempt registry request try #2 at 23:42:37
+28 http request GET https://registry.npmjs.org/redux-devtools
+29 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+30 info attempt registry request try #3 at 23:43:37
+31 http request GET https://registry.npmjs.org/redux-devtools
+32 verbose stack Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+32 verbose stack     at Object.exports._errnoException (util.js:870:11)
+32 verbose stack     at errnoException (dns.js:32:15)
+32 verbose stack     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:78:26)
+33 verbose cwd F:\sundegui\github\testspa
+34 error Windows_NT 6.1.7601
+35 error argv "E:\\Program Files\\nodejs\\node.exe" "E:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save-dev" "redux-devtools"
+36 error node v4.4.5
+37 error npm  v2.15.5
+38 error code EAI_AGAIN
+39 error errno EAI_AGAIN
+40 error syscall getaddrinfo
+41 error getaddrinfo EAI_AGAIN registry.npmjs.org:443
+42 error If you need help, you may report this error at:
+42 error     <https://github.com/npm/npm/issues>
+43 verbose exit [ 1, true ]
