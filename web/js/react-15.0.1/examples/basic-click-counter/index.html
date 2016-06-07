@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Basic Click Counter Example with JSX</title>
+    <link rel="stylesheet" href="../shared/css/base.css" />
+  </head>
+  <body>
+    <h1>Basic Click Counter Example with JSX</h1>
+    <div id="container">
+      <p>
+        To install React, follow the instructions on
+        <a href="https://github.com/facebook/react/">GitHub</a>.
+      </p>
+      <p>
+        If you can see this, React is <strong>not</strong> working right.
+        If you checked out the source from GitHub make sure to run <code>grunt</code>.
+      </p>
+    </div>
+    <h4>Example Details</h4>
+    <p>This is written with JSX and transformed in the browser.</p>
+    <p>This example uses events and state to track clicks and update the rendered output.</p>
+    <p>
+      Learn more about React at
+      <a href="https://facebook.github.io/react" target="_blank">facebook.github.io/react</a>.
+    </p>
+    <script src="../../build/react.js"></script>
+    <script src="../../build/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+    <script>
+      var you = 100000;
+
+      function youC () {
+        you = 10;
+      }
+    </script>
+    <script type="text/babel">
+      
+      var test = 'bbbbbbb';
+      
+      setTimeout(youC,5000);
+
+      var Counter = React.createClass({
+        getInitialState: function () {
+          return { count: 0 };
+        },
+        handleClick: function () {
+          this.setState({
+            count: this.state.count + 1,
+          });
+        },
+        onChildChanged: function (def) {
+          alert(def)
+          this.setState({
+            count: def
+          });
+        },
+        conponentWillUpdate: function () {
+          alert('will update')
+        },
+        render: function () {
+          return (
+            <div>
+              <Link />
+              <button onClick={this.handleClick}>
+                Click me! Number of clicks: {this.state.count}
+              </button>
+              <Link />
+              <TabBar abc={this.props.ttt} count={this.state.count} callbackParent={this.onChildChanged}/>
+            </div>
+          );
+        }
+      });
+
+      var Link = React.createClass({
+        render: function () {
+          return (
+            <p>nimeimei</p>
+          )
+        }
+      });
+
+      var TabBar = React.createClass({
+        getDefaultProps: function () {
+          return {
+            haha: 'hehe',
+            age: 27
+          }
+        },
+        componentWillReceiveProps: function () {
+          alert('componentWillReceiveProps')
+        },
+        conponentWillUpdate: function () {
+          alert('will update TabBar')
+        },
+        conponentDidUpdate: function () {
+          alert('did update TabBar')
+        },
+        change: function (e) {
+          var p_state = this.props.count;
+          console.log(p_state);
+          p_state = {count: 666}
+          console.log(this.props.count)
+          console.log(p_state);
+          console.log(e.currentTarget);
+          console.log(e.target);
+          console.log(this.props);
+          console.log(this.props.abc);
+          console.log(typeof(this.props.abc));
+          console.log(test);
+
+          this.props.callbackParent(9988);
+
+
+          
+
+        },
+        componentWillMount: function () {
+          alert('willMount')
+        },
+        componentDidMount: function () {
+          alert('did mount')
+        },
+        render: function () {
+          return (
+            <ul onClick={this.change}>
+              <li>34</li>
+              <li>12</li>
+              <li>45</li>
+              <li>65</li>
+              <li>33</li>
+              <li>{this.props.abc}</li>
+              <li>{this.props.count}</li>
+            </ul>
+          )
+        }
+      });
+
+      
+
+      ReactDOM.render(
+        <Counter ttt={you}/>,
+        document.getElementById('container')
+      );
+
+      function rerender () {
+        ReactDOM.render(
+          <Counter ttt={you}/>,
+          document.getElementById('container')
+        );
+      }
+
+      setTimeout(rerender,6000);
+
+    </script>
+  </body>
+</html>
