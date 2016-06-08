@@ -3,7 +3,7 @@
 学习学习学习react+redux+bootstrap+webpack。
 
 
-
+后端采用PHP的yii框架基础版。学习ing
 
 
 
